@@ -34,12 +34,14 @@ namespace Restaurant.Models
                 entity.ToTable("Tbl_Food");
 
                 entity.Property(e => e.Comment)
-                    .HasMaxLength(50)
+                    .HasMaxLength(500)
                     .IsFixedLength();
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .IsFixedLength();
+
+                entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
 
                 entity.Property(e => e.Style)
                     .HasMaxLength(50)
